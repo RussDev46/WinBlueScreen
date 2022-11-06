@@ -50,7 +50,7 @@ END
 // Bitmap
 //
 
-IDB_BITMAP1             BITMAP                  "C:\\Users\\sdolg\\source\\repos\\WinBlueScreen\\res\\qr.bmp"
+IDB_BITMAP1             BITMAP                  "qr.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -60,7 +60,7 @@ IDB_BITMAP1             BITMAP                  "C:\\Users\\sdolg\\source\\repos
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "C:\\Users\\sdolg\\source\\repos\\WinBlueScreen\\res\\WinBlueScreenIcon.ico"
+IDI_ICON1               ICON                    "WinBlueScreenIcon.ico"
 
 #endif    // Deutsch (Deutschland) resources
 /////////////////////////////////////////////////////////////////////////////
